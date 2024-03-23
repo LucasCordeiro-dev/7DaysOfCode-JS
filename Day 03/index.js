@@ -1,42 +1,31 @@
 alert('Bem-Vindo!')
-let pergunta = prompt(`Atualmente Você está pretendendo focar em qual área? Responda 1 para FRONT-END e 2 para BACK-END `)
-if (pergunta == 1) {
-    const react = "React"
-    const vue = "Vue"
-    let respostaFront = prompt(`Você gostaria de aprender ${react} ou ${vue} ? Responda 1 para ${react} e 2 para ${vue}`)
-    let escolha;
-    if (respostaFront == 1) {
-        escolha = react;
-        alert('Boa! O React é uma biblioteca baseada em componentes, o que significa que permite a criação de interfaces de usuário modulares e reutilizáveis. Os componentes React podem ser facilmente compostos para construir interfaces de usuário complexas, promovendo a reutilização de código e a manutenibilidade.')
+const area = prompt(`Atualmente Você está pretendendo focar na área de 'Front-End' ou 'Back-End'? Digite o nome da área`);
+let linguagem="";
+    if(area === "Front-End"){
+        linguagem = prompt("Você quer aprender React ou Vue?");
+    }
+    else if (area === "Back-End"){
+        linguagem = prompt("Você quer aprender C# ou Java?");
+    }
+    else{
+        alert("Você  não inseriu uma área válida!");
+    }
+const especializarOuFullStack = prompt("Digite 1 para se especializar na área escolhida ou 2 para se tornar um FullStack");
+    if(especializarOuFullStack == 1){
+        alert(`Continue focando em ${linguagem} para dominar a área de ${area}`)
+    }
+    else if (especializarOuFullStack == 2){
+        alert(`Está na hora de começar a aprender novas linguagens além de ${linguagem} se o foco é se tornar FullStack!`);
+    }
+    else{
+        alert("Você não inseriu um valor válido!")
     }
 
-    else if (respostaFront == 2) {
-        escolha = vue;
-        alert('Legal! Vue.js é conhecido por sua curva de aprendizado suave. Sua sintaxe simples e direta torna mais fácil para os desenvolvedores iniciantes e experientes começarem rapidamente a desenvolver aplicativos.')
-    }
-
-    let fullstack = "FullStack"
-    let duvida = prompt(`Você pretende se especializar em ${escolha} (Responda com 0) ou se tornar ${fullstack}? (Responda com 1).`)
-    let opcao;
-    if (duvida == 0) {
-        opcao = `${escolha}`
-        alert(`${escolha} é uma ótima opçao! Continue firme na sua jornada, dev!`)
-    }
-
-    else if (duvida == 1) {
-        opcao = `${fullstack}`
-        alert(`${fullstack} é sem dúvidas uma excelente opcao para abranger os conhecimentos e ter capacidade de auxiliar em diferentes áreas dentro de um projeto,Boa!`)
-    }
-
-    let tecnologias = prompt(`Quais tecnologias você gostaria de se especializar ou conhecer?`)
-    alert(`${tecnologias} é sem dúvidas uma excelente escolha, vai fundo!`)
-    const loop = prompt(`Tem mais alguma tecnologia que você gostaria de aprender? S / N`)
-    while (loop == 'S') {
-        let novaTecnologia = prompt(`Quais tecnologias você gostaria de se especializar ou conhecer?`);
-        tecnologias += ', ' + novaTecnologia; // Adiciona a nova tecnologia à lista existente
-        alert(`${novaTecnologia} é sem dúvidas uma excelente escolha, vai fundo!`);
-        loop = prompt(`Tem mais alguma tecnologia que você gostaria de aprender? S / N`);
-    }
-
-    //Falta finalizar o loop e adicionar a parte do BACKEND!!
+    let msg = prompt("Tem mais alguma tecnologia que você gostaria de aprender? Digite 'ok' em caso positivo.");
+while (msg === "ok"){
+    let novaTecnologia = prompt("Qual?");
+    alert(`${novaTecnologia} é realmente uma tecnologia muito legal!`)
+    msg = prompt("Tem mais alguma tecnologia que você gostaria de aprender? Digite 'ok' em caso positivo.");
 }
+
+
